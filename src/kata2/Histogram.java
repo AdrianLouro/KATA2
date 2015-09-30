@@ -2,22 +2,22 @@ package kata2;
 
 import java.util.HashMap;
 
-public class Histogram {
+public class Histogram<T> {
 
-    private final int[] array;
+    private final T[] array;
 
-    public Histogram(int[] array) {
+    public Histogram(T[] array) {
         this.array = array;
     }
 
-    public int[] getArray() {
-        return array;
+    public T[] getArray() {
+        return this.array;
     }
 
-    public HashMap<Integer, Integer> getHistogram() {
-        HashMap<Integer, Integer> histogram = new HashMap();
+    public HashMap<T, Integer> getHistogram() {
+        HashMap<T, Integer> histogram = new HashMap();
 
-        for (int key : this.array) {
+        for (T key : this.array) {
             histogram.put(key,
                     (histogram.containsKey(key) ? histogram.get(key) : 0) + 1);
         }
